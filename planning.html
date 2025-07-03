@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС «Субмикрон 2» — Планирование</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>АИС «Субмикрон 2» — Информационная поддержка кристального производства</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./dashboard.html">Главная</a></li>
+            <li><a href="./monitoring.html">Мониторинг оборудования</a></li>
+            <li><a href="./materials.html">Учет материалов</a></li>
+            <li><a href="./planning.html">Планирование</a></li>
+            <li><a href="./admin.html">Администрирование</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="planning">
+            <h2>Планирование производственных процессов</h2>
+            <h3>Создание нового плана</h3>
+            <form id="planningForm">
+                <label>Название плана:</label>
+                <input type="text" id="planName" name="planName">
+                
+                <label>Дата начала:</label>
+                <input type="date" id="startDate" name="startDate">
+                
+                <label>Дата окончания:</label>
+                <input type="date" id="endDate" name="endDate">
+                
+                <label>Описание:</label>
+                <textarea id="description" name="description"></textarea>
+                
+                <button type="submit">Создать план</button>
+            </form>
+
+            <h3>Существующие планы</h3>
+            <table id="plansTable">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Дата начала</th>
+                        <th>Дата окончания</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>План по ТО</td>
+                        <td>2025-05-01</td>
+                        <td>2025-05-15</td>
+                        <td>Плановое техническое обслуживание оборудования.</td>
+                    </tr>
+                    <tr>
+                        <td>План по закупкам</td>
+                        <td>2025-06-01</td>
+                        <td>2025-06-10</td>
+                        <td>Закупка необходимых материалов для производства.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>АИС «Субмикрон 2» | Служба поддержки: <a href="mailto:support@micron.ru">support@micron.ru</a></p>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./planning.js"></script>
+</body>
+</html>

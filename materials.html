@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС «Субмикрон 2» — Учет материалов</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>АИС «Субмикрон 2» — Информационная поддержка кристального производства</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./dashboard.html">Главная</a></li>
+            <li><a href="./monitoring.html">Мониторинг оборудования</a></li>
+            <li><a href="./materials.html">Учет материалов</a></li>
+            <li><a href="./planning.html">Планирование</a></li>
+            <li><a href="./admin.html">Администрирование</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="materials">
+            <h2>Учет материально-технических ресурсов</h2>
+            <div class="filters">
+                <label>Тип материала</label>
+                <select id="materialTypeFilter">
+                    <option value="">Все</option>
+                    <option value="Кремний">Кремний</option>
+                    <option value="Полимеры">Полимеры</option>
+                </select>
+
+                <label>Срок годности</label>
+                <input type="date" id="expiryDateFilter">
+
+                <label>Склад</label>
+                <select id="warehouseFilter">
+                    <option value="">Все</option>
+                    <option value="Склад №1">Склад №1</option>
+                    <option value="Склад №2">Склад №2</option>
+                </select>
+
+                <button id="filterBtn">Применить</button>
+                <button id="clearFilterBtn">Сбросить</button>
+            </div>
+
+            <table id="materialsTable">
+                <thead>
+                    <tr>
+                        <th>Наименование</th>
+                        <th>Количество</th>
+                        <th>Срок годности</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Кремний</td>
+                        <td>500 кг</td>
+                        <td>2026-06-01</td>
+                    </tr>
+                    <tr>
+                        <td>Полимеры</td>
+                        <td>200 л</td>
+                        <td>2025-12-15</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="orderMaterialsButton">Заказать материалы</button>
+            <div id="message"></div>
+
+            <div id="orderModal" class="modal">
+                <div class="modal-content">
+                    <h3>Заказ материалов</h3>
+                    <form id="orderForm">
+                        <label>Наименование материала</label>
+                        <select id="materialSelect" name="material">
+                            <option value="">Выберите материал</option>
+                            <option value="Кремний">Кремний</option>
+                            <option value="Полимеры">Полимеры</option>
+                        </select>
+                        <span id="materialError" class="error">Пожалуйста, выберите материал.</span>
+
+                        <label>Количество</label>
+                        <input type="number" id="quantityInput" name="quantity" min="1">
+                        <span id="quantityError" class="error">Пожалуйста, введите количество.</span>
+
+                        <div class="modal-buttons">
+                            <button type="button" id="cancelOrderBtn" class="cancel-btn">Отмена</button>
+                            <button type="submit" class="submit-btn">Заказать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>АИС «Субмикрон 2» | Служба поддержки: <a href="mailto:support@material.ru">support@micron.ru</a></p>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./materials.js"></script>
+</body>
+</html>

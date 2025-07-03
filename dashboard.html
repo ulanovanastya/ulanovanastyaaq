@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС «Субмикрон 2» — Панель мониторинга</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>АИС «Субмикрон 2» — Информационная поддержка кристального производства</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./dashboard.html">Главная</a></li>
+            <li><a href="./monitoring.html">Мониторинг оборудования</a></li>
+            <li><a href="./materials.html">Учет материалов</a></li>
+            <li><a href="./planning.html">Планирование</a></li>
+            <li><a href="./admin.html">Администрирование</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="main">
+            <h2>Панель мониторинга</h2>
+            <div class="dashboard">
+                <div class="card">
+                    <h3>Состояние оборудования</h3>
+                    <p>Активно: 85% | Простои: 5% | ТО: 10%</p>
+                </div>
+                <div class="card">
+                    <h3>Уровень запасов</h3>
+                    <p>Материалы: 92% | Запчасти: 78%</p>
+                </div>
+                <div class="card">
+                    <h3>Выполнение плана</h3>
+                    <p>Прогресс: 88% | Осталось: 12%</p>
+                </div>
+                <div class="card">
+                    <h3>Последние задачи</h3>
+                    <ul>
+                        <li>Провести ТО станка №5</li>
+                        <li>Заказать кремний</li>
+                        <li>Проверить партию кристаллов</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>АИС «Субмикрон 2» | Служба поддержки: <a href="mailto:support@micron.ru">support@micron.ru</a></p>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./dashboard.js"></script>
+</body>
+</html>

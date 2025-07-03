@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС «Субмикрон 2» — Администрирование</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>АИС «Субмикрон 2» — Информационная поддержка кристального производства</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./dashboard.html">Главная</a></li>
+            <li><a href="./monitoring.html">Мониторинг оборудования</a></li>
+            <li><a href="./materials.html">Учет материалов</a></li>
+            <li><a href="./planning.html">Планирование</a></li>
+            <li><a href="./admin.html">Администрирование</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="admin">
+            <h2>Администрирование системы</h2>
+            <h3>Управление пользователями</h3>
+            <form id="userForm">
+                <label>Имя пользователя:</label>
+                <input type="text" id="username" name="username">
+                
+                <label>Пароль:</label>
+                <input type="password" id="password" name="password">
+                
+                <label>Роль:</label>
+                <select id="role" name="role">
+                    <option value="">Выберите роль</option>
+                    <option value="Администратор">Администратор</option>
+                    <option value="Менеджер">Менеджер</option>
+                    <option value="Просмотр">Просмотр</option>
+                </select>
+                
+                <button type="submit">Добавить пользователя</button>
+            </form>
+            <div id="formMessage"></div>
+
+            <h3>Текущие пользователи</h3>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Имя пользователя</th>
+                        <th>Роль</th>
+                        <th>Статус</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>АИС «Субмикрон 2» | Служба поддержки: <a href="mailto:support@micron.ru">support@micron.ru</a></p>
+    </footer>
+
+    <script src="./app.js"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>
+
+
+

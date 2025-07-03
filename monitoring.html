@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АИС «Субмикрон 2» — Мониторинг оборудования</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>АИС «Субмикрон 2» — Информационная поддержка кристального производства</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./dashboard.html">Главная</a></li>
+            <li><a href="./monitoring.html">Мониторинг оборудования</a></li>
+            <li><a href="./materials.html">Учет материалов</a></li>
+            <li><a href="./planning.html">Планирование</a></li>
+            <li><a href="./admin.html">Администрирование</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="monitoring">
+            <h2>Мониторинг и контроль оборудования</h2>
+            <div class="filters">
+                <label>Фильтр: Оборудование</label>
+                <select id="filterEquipment">
+                    <option value="">Все</option>
+                    <option value="Станок №1">Станок №1</option>
+                    <option value="Станок №2">Станок №2</option>
+                </select>
+
+                <label>Фильтр: Тип обслуживания</label>
+                <select id="filterServiceType">
+                    <option value="">Все</option>
+                    <option value="Плановое ТО">Плановое ТО</option>
+                    <option value="Ремонт">Ремонт</option>
+                </select>
+
+                <label>Фильтр: Дата</label>
+                <input type="date" id="filterDate">
+
+                <button id="filterBtn">Применить фильтры</button>
+                <button id="clearFilterBtn">Сбросить фильтры</button>
+            </div>
+
+            <table id="equipmentTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-key="equipment">Оборудование</th>
+                        <th>Статус</th>
+                        <th class="sortable" data-key="lastMaintenance">Последнее ТО</th>
+                        <th>Параметры</th>
+                        <th class="sortable" data-key="serviceType">Тип обслуживания</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Станок №1</td>
+                        <td>Активен</td>
+                        <td>2025-05-20</td>
+                        <td>Температура: 22°C, Давление: 1.2 бар</td>
+                        <td>Плановое ТО</td>
+                    </tr>
+                    <tr>
+                        <td>Станок №2</td>
+                        <td>Простой</td>
+                        <td>2025-04-15</td>
+                        <td>Температура: 21°C, Давление: 1.1 бар</td>
+                        <td>Ремонт</td>
+                    </tr>
+                    <tr>
+                        <td>Станок №1</td>
+                        <td>Активен</td>
+                        <td>2025-03-10</td>
+                        <td>Температура: 23°C, Давление: 1.3 бар</td>
+                        <td>Ремонт</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button id="createRequestButton">Создать заявку на ТО</button>
+            <div id="message"></div>
+
+            <div id="requestModal" class="modal">
+                <div class="modal-content">
+                    <h3>Создание заявки на ТО</h3>
+                    <form id="requestForm">
+                        <label>Оборудование</label>
+                        <select id="equipmentSelect" name="equipment">
+                            <option value="">Выберите оборудование</option>
+                            <option value="Станок №1">Станок №1</option>
+                            <option value="Станок №2">Станок №2</option>
+                        </select>
+                        <span id="equipmentError" class="error">Пожалуйста, выберите оборудование.</span>
+
+                        <label>Дата</label>
+                        <input type="date" id="dateInput" name="date">
+                        <span id="dateError" class="error">Пожалуйста, выберите дату.</span>
+
+                        <label>Тип обслуживания</label>
+                        <select id="serviceTypeSelect" name="serviceType">
+                            <option value="">Выберите тип обслуживания</option>
+                            <option value="Плановое ТО">Плановое ТО</option>
+                            <option value="Ремонт">Ремонт</option>
+                        </select>
+                        <span id="serviceTypeError" class="error">Пожалуйста, выберите тип обслуживания.</span>
+
+                        <div class="modal-buttons">
+                            <button type="button" id="cancelBtn" class="cancel-btn">Отмена</button>
+                            <button type="submit" class="submit-btn">Отправить заявку</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>АИС «Субмикрон 2» | Служба поддержки: <a href="mailto:support@micron.ru">support@micron.ru</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./monitoring.js"></script>
+</body>
+</html>
